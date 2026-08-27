@@ -7,27 +7,31 @@ Does your UI read as AI-generated? Ask before you ship it.
 
 ## What it does
 
-Design Check scans a page's HTML, CSS, and copy for the specific patterns that
-make AI-generated UI read as generic — not just individual tropes (a gradient
-here, a pill button there), but the composition itself. A page can avoid every
-named cliché and still look templated if the whole layout is one unvarying
-centered column with a flat background the entire way down. That's the check
-most tools miss, because it isn't about any single element.
+Design Check scans a page's HTML, CSS, copy, and interaction patterns for what
+makes AI-generated work read as generic. Individual visual tropes matter, a
+gradient here, a pill button there, but composition matters more: a page can
+avoid every named cliché and still look templated if the whole layout is one
+unvarying centered column with a flat background the entire way down. That's
+the check most tools miss, because it isn't about any single element.
 
-Checks: default font stacks with nothing distinctive alongside them, soft tech
-gradients, pill-shaped CTAs paired with arrow icons, eyebrow labels sitting
-directly above headlines, uniform card grids, composition that never varies
-width or background across sections, and copy tells — AI-cliché vocabulary,
-negative-parallel framing ("It's not X, it's Y"), hedge words, heavy em-dash
-use.
+Design here isn't only visual. A tool that names a problem and stops there —
+tells you what's wrong with no path forward — has an experience-design
+failure, whatever it looks like. Every finding Design Check returns includes
+a concrete fix alongside the diagnosis, not just a description of what's
+wrong.
 
-A fifth check — vision-based critique of a rendered screenshot, powered by
-Claude, catching gestalt issues text analysis alone can't — is built and
+Checks span four categories: typography and color (default fonts, soft tech
+gradients), components and layout (pill+arrow CTAs, eyebrow labels, uniform
+card grids, composition that never varies width or background), copy
+(AI-cliché vocabulary, negative-parallel framing, hedge words, heavy em-dash
+use), and experience (a diagnosis with no next step, dead-end links).
+
+A fifth check, vision-based critique of a rendered screenshot powered by
+Claude and catching gestalt issues text analysis alone can't, is built and
 tested but currently gated off while we get billing in front of it.
 
 This page's own score, run live through the same engine on every load, is
 shown at the top of [the live site](https://designcheck.allthepossibles.com).
-Not a claim. A number.
 
 ## Using it
 
