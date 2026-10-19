@@ -64,7 +64,7 @@ Full API reference: https://designcheck.allthepossibles.com/docs
 
 Free: every structural, copy and code check, 20 checks a minute per caller IP,
 no signup. Basic ($5/month) raises that to 150 a minute; Pro ($19/month) to
-500 and runs the vision pass on our key up to a monthly allowance. Both are in
+500 and runs the vision pass on our key up to a monthly allowance. Pro is in
 the [Studio Bundle](https://allthepossibles.com).
 
 Listed in the official MCP Registry as `com.allthepossibles/designcheck`.
