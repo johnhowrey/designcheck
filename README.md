@@ -14,11 +14,10 @@ avoid every named cliché and still look templated if the whole layout is one
 unvarying centered column with a flat background the entire way down. That's
 the check most tools miss, because it isn't about any single element.
 
-Design here isn't only visual. A tool that names a problem and stops there —
-tells you what's wrong with no path forward — has an experience-design
+Design here isn't only visual. A tool that names a problem and stops there,
+telling you what's wrong with no path forward, has an experience-design
 failure, whatever it looks like. Every finding Design Check returns includes
-a concrete fix alongside the diagnosis, not just a description of what's
-wrong.
+a concrete fix alongside the diagnosis.
 
 Checks span four categories: typography and color (default fonts, soft tech
 gradients), components and layout (pill+arrow CTAs, eyebrow labels, uniform
@@ -26,9 +25,12 @@ card grids, composition that never varies width or background), copy
 (AI-cliché vocabulary, negative-parallel framing, hedge words, heavy em-dash
 use), and experience (a diagnosis with no next step, dead-end links).
 
-A fifth check, vision-based critique of a rendered screenshot powered by
-Claude and catching gestalt issues text analysis alone can't, is built and
-tested but currently gated off while we get billing in front of it.
+Two more are live. A vision pass takes a real screenshot of the URL and has
+Claude critique the rendered result, which catches the gestalt problems text
+analysis can't see; it runs on your own Anthropic key (send it in an
+`x-anthropic-key` header, on any tier) or on ours for paid Pro subscribers. And
+a code-comment check (`check_code`) flags comments that narrate a request
+("as requested," "I've added") instead of describing the code.
 
 This page's own score, run live through the same engine on every load, is
 shown at the top of [the live site](https://designcheck.allthepossibles.com).
@@ -45,7 +47,8 @@ shown at the top of [the live site](https://designcheck.allthepossibles.com).
 }
 ```
 
-Then call `check_design` before presenting UI to a human.
+Then call `check_design` before presenting UI to a human. `check_copy` runs the
+same engine on a single text field, for outreach or marketing copy.
 
 **Or the REST API directly:**
 
@@ -57,9 +60,14 @@ curl -X POST https://designcheck.allthepossibles.com/api/check \
 
 Full API reference: https://designcheck.allthepossibles.com/docs
 
-## Free during preview
+## Pricing
 
-20 checks/minute per caller IP, no signup, no API key.
+Free: every structural, copy and code check, 20 checks a minute per caller IP,
+no signup. Basic ($5/month) raises that to 150 a minute; Pro ($19/month) to
+500 and runs the vision pass on our key up to a monthly allowance. Both are in
+the [Studio Bundle](https://allthepossibles.com).
+
+Listed in the official MCP Registry as `com.allthepossibles/designcheck`.
 
 ## Reporting a false positive or false negative
 
